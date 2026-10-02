@@ -1,0 +1,36 @@
+{
+  "featured": [
+    {
+      "repo": "command-guardian",
+      "site": "https://ba0918.github.io/command-guardian/",
+      "en": "Checks shell commands for destructive effects before they run, and answers allow, ask or block. Works from the CLI and as a pre-execution hook for Claude Code and Codex.",
+      "ja": "シェルコマンドを実行前に読み、何を壊すかを判定して allow・ask・block を返します。CLI としても、Claude Code や Codex の実行前フックとしても使えます。"
+    },
+    {
+      "repo": "kotowari",
+      "en": "Spec-as-IR for LLM-driven development: write specs in structured Markdown, then check that every requirement traces to a decision and a test.",
+      "ja": "LLM 駆動開発のための Spec-as-IR。構造化 Markdown で仕様を書き、すべての要件が設計判断とテストにつながっているかを検査します。"
+    },
+    {
+      "repo": "kakoi",
+      "en": "Runs a command inside a bubblewrap mount namespace shaped by a layered policy.",
+      "ja": "レイヤー化したポリシーから組み立てた bubblewrap のマウント名前空間の中でコマンドを実行します。"
+    },
+    {
+      "repo": "kemi",
+      "en": "A local browser-based review tool that returns human feedback as structured JSON.",
+      "ja": "人のレビュー結果を構造化 JSON で返す、ブラウザで使うローカルレビューツールです。"
+    },
+    {
+      "repo": "remote-merge",
+      "en": "A TUI that shows and merges file differences between your machine and a remote server over SSH.",
+      "ja": "SSH 経由でローカルとリモートサーバのファイル差分を TUI で表示・マージする CLI ツールです。"
+    },
+    {
+      "repo": "ccusage-ledger",
+      "en": "A usage dashboard for agent CLIs that visualizes cost, tokens and cache hit rates from ccusage data.",
+      "ja": "ccusage のデータから、エージェント CLI のコスト・トークン数・キャッシュヒット率を可視化するダッシュボードです。"
+    }
+  ],
+  "exclude": ["ba0918.github.io"]
+}

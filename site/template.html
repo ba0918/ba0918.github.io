@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ba0918</title>
+<meta name="description" content="Developer tools by ba0918, mostly in Rust, for working safely and precisely alongside AI coding agents.">
+<meta property="og:title" content="ba0918">
+<meta property="og:description" content="Developer tools by ba0918, mostly in Rust, for working alongside AI coding agents.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/932834?v=4">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    var lang = null;
+    try { lang = localStorage.getItem("portfolio-lang"); } catch (e) {}
+    if (lang !== "en" && lang !== "ja") {
+      lang = /^ja\b/i.test(navigator.language || "") ? "ja" : "en";
+    }
+    document.documentElement.dataset.lang = lang;
+    document.documentElement.lang = lang;
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top"><img src="favicon.svg" alt="" width="24" height="24">ba0918</a>
+    <nav>
+      <a class="nav-section" href="#products"><span class="en">Products</span><span class="ja">プロダクト</span></a>
+      <a class="nav-section" href="#repositories"><span class="en">Repositories</span><span class="ja">リポジトリ</span></a>
+      <a class="nav-github" href="https://github.com/ba0918" aria-label="GitHub"><svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <button type="button" class="lang-toggle" aria-label="Switch language / 言語を切り替え">
+        <span class="en">日本語</span><span class="ja">English</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/932834?v=4&amp;s=192" alt="" width="96" height="96">
+      <div>
+        <p class="eyebrow">ba0918 · Japan</p>
+        <h1>
+          <span class="en">Tools for working <em>alongside</em> AI coding agents.</span>
+          <span class="ja">AI エージェントと<em>一緒に</em>開発するための道具をつくっています。</span>
+        </h1>
+        <p class="tagline">
+          <span class="en">Mostly Rust, with some TypeScript and Python: guards that stop risky commands, specs that agents can check against, and small utilities for the day-to-day.</span>
+          <span class="ja">主に Rust、ときどき TypeScript と Python。危ないコマンドを止める仕組み、エージェントが照合できる仕様の書き方、日々の作業を楽にする小さな道具などを公開しています。</span>
+        </p>
+        <div class="cta">
+          <a class="button primary" href="#products"><span class="en">See products</span><span class="ja">プロダクトを見る</span></a>
+          <a class="button" href="https://github.com/ba0918"><span class="en">GitHub profile</span><span class="ja">GitHub プロフィール</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="band">
+    <div class="wrap">
+      <h2 class="section-title"><span class="en">Products</span><span class="ja">プロダクト</span></h2>
+      <p class="section-lead">
+        <span class="en">Projects with their own website open it directly; the rest link to GitHub.</span>
+        <span class="ja">専用サイトがあるものはサイトへ、それ以外は GitHub へリンクしています。</span>
+      </p>
+      <div class="cards">
+{{featured}}
+      </div>
+    </div>
+  </section>
+
+  <section id="repositories"{{others_hidden}}>
+    <div class="wrap">
+      <h2 class="section-title"><span class="en">Other repositories</span><span class="ja">そのほかのリポジトリ</span></h2>
+      <p class="section-lead">
+        <span class="en">Every other public repository, most recently updated first. This list refreshes from GitHub automatically.</span>
+        <span class="ja">そのほかの公開リポジトリを、更新が新しい順に並べています。一覧は GitHub から自動で更新されます。</span>
+      </p>
+      <ul class="repo-list">
+{{others}}
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="https://github.com/ba0918">github.com/ba0918</a></p>
+    <p><span class="en">Built {{built}} from <a href="https://github.com/ba0918/ba0918.github.io">ba0918/ba0918.github.io</a>.</span><span class="ja">{{built}} に <a href="https://github.com/ba0918/ba0918.github.io">ba0918/ba0918.github.io</a> から生成。</span></p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    document.querySelector(".lang-toggle").addEventListener("click", function () {
+      var next = root.dataset.lang === "ja" ? "en" : "ja";
+      root.dataset.lang = next;
+      root.lang = next;
+      try { localStorage.setItem("portfolio-lang", next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
