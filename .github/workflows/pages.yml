@@ -2,7 +2,7 @@ name: Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
   schedule:
     # Refresh the repository list daily so new or updated repositories appear.
