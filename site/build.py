@@ -25,9 +25,6 @@ from pathlib import Path
 
 USER = "ba0918"
 ROOT = Path(__file__).resolve().parent
-REPO_ROOT = ROOT.parent
-# Older pages that already live at these URLs and are kept published.
-LEGACY_PATHS = ["unity"]
 
 
 def esc(text):
@@ -157,9 +154,6 @@ def main():
     (out / "index.html").write_text(page, encoding="utf-8")
     for asset in ("style.css", "favicon.svg"):
         shutil.copy(ROOT / asset, out / asset)
-    for legacy in LEGACY_PATHS:
-        if (REPO_ROOT / legacy).exists():
-            shutil.copytree(REPO_ROOT / legacy, out / legacy)
     (out / ".nojekyll").write_text("")
     print(f"built {out / 'index.html'}: {len(config['featured'])} featured, {len(others)} other repositories")
 
