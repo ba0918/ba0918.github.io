@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build the portfolio top page for https://ba0918.github.io/.
 
-Featured products and their EN/JA blurbs come from site/products.json. Every
-other public, non-fork, non-archived repository is listed from the GitHub API,
+Featured products and their EN/JA blurbs come from site/products.json. The six
+most recently pushed other public, non-fork, non-archived repositories come from the GitHub API,
 so a new repository (or a new project site under /<repo>/) shows up on the next
 build without editing this repository.
 
@@ -139,6 +139,7 @@ def main():
     featured = "\n".join(featured_card(item, by_name.get(item["repo"], {})) for item in config["featured"])
     others = [r for r in public if not r.get("fork") and not r.get("archived") and r["name"] not in skip]
     others.sort(key=lambda r: r.get("pushed_at") or "", reverse=True)
+    others = others[:6]
     other_rows = "\n".join(repo_row(r) for r in others)
 
     page = (ROOT / "template.html").read_text(encoding="utf-8")
@@ -152,7 +153,7 @@ def main():
         shutil.rmtree(out)
     out.mkdir(parents=True)
     (out / "index.html").write_text(page, encoding="utf-8")
-    for asset in ("style.css", "favicon.png", "apple-touch-icon.png", "avatar.jpg"):
+    for asset in ("style.css", "favicon.png", "apple-touch-icon.png", "avatar.jpg", "build-loop.svg"):
         shutil.copy(ROOT / asset, out / asset)
     (out / ".nojekyll").write_text("")
     print(f"built {out / 'index.html'}: {len(config['featured'])} featured, {len(others)} other repositories")

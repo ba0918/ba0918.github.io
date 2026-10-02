@@ -30,7 +30,7 @@
     <a class="brand" href="#top"><img src="favicon.png" alt="" width="24" height="24">ba0918</a>
     <nav>
       <a class="nav-section" href="#products"><span class="en">Products</span><span class="ja">プロダクト</span></a>
-      <a class="nav-section" href="#repositories"><span class="en">Repositories</span><span class="ja">リポジトリ</span></a>
+      <a class="nav-section" href="#repositories"><span class="en">Recent work</span><span class="ja">最近の開発</span></a>
       <a class="nav-github" href="https://github.com/ba0918" aria-label="GitHub"><svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
       <button type="button" class="lang-toggle" aria-label="Switch language / 言語を切り替え">
         <span class="en">日本語</span><span class="ja">English</span>
@@ -42,6 +42,7 @@
 <main id="top">
   <section class="hero">
     <div class="wrap hero-inner">
+      <img class="build-loop" src="build-loop.svg" alt="" aria-hidden="true" width="340" height="184">
       <img class="avatar" src="avatar.jpg" alt="" width="96" height="96">
       <div>
         <p class="eyebrow">ba0918 · Japan</p>
@@ -55,7 +56,7 @@
         </p>
         <div class="cta">
           <a class="button primary" href="#products"><span class="en">See products</span><span class="ja">プロダクトを見る</span></a>
-          <a class="button" href="https://github.com/ba0918"><span class="en">GitHub profile</span><span class="ja">GitHub プロフィール</span></a>
+          <a class="button" href="#repositories"><span class="en">Recent work <span aria-hidden="true">↓</span></span><span class="ja">最近の開発 <span aria-hidden="true">↓</span></span></a>
         </div>
       </div>
     </div>
@@ -76,14 +77,15 @@
 
   <section id="repositories"{{others_hidden}}>
     <div class="wrap">
-      <h2 class="section-title"><span class="en">Other repositories</span><span class="ja">そのほかのリポジトリ</span></h2>
+      <h2 class="section-title"><span class="en">Recent work</span><span class="ja">最近の開発</span></h2>
       <p class="section-lead">
-        <span class="en">Every other public repository, most recently updated first. This list refreshes from GitHub automatically.</span>
-        <span class="ja">そのほかの公開リポジトリを、更新が新しい順に並べています。一覧は GitHub から自動で更新されます。</span>
+        <span class="en">Beyond the products above: the six most recently updated repositories. Refreshed automatically from GitHub.</span>
+        <span class="ja">上のプロダクトを除き、更新が新しいリポジトリを6件まで。GitHub から自動で更新しています。</span>
       </p>
       <ul class="repo-list">
 {{others}}
       </ul>
+      <a class="all-repos" href="https://github.com/ba0918?tab=repositories"><span class="en">All repositories on GitHub</span><span class="ja">すべてのリポジトリを GitHub で見る</span> <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </main>

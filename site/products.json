@@ -8,13 +8,13 @@
     },
     {
       "repo": "kotowari",
-      "en": "Spec-as-IR for LLM-driven development: write specs in structured Markdown, then check that every requirement traces to a decision and a test.",
-      "ja": "LLM 駆動開発のための Spec-as-IR。構造化 Markdown で仕様を書き、すべての要件が設計判断とテストにつながっているかを検査します。"
+      "en": "Check that every requirement connects to a design decision and a test. Uses structured Markdown specifications for LLM-driven development (Spec-as-IR).",
+      "ja": "要件が設計判断やテストにつながっているかを検査します。構造化 Markdown の仕様を使い、LLM 駆動開発を支える Spec-as-IR ツールです。"
     },
     {
       "repo": "kakoi",
-      "en": "Runs a command inside a bubblewrap mount namespace shaped by a layered policy.",
-      "ja": "レイヤー化したポリシーから組み立てた bubblewrap のマウント名前空間の中でコマンドを実行します。"
+      "en": "Control which files a command can access when it runs. Builds a bubblewrap mount namespace from layered policies.",
+      "ja": "コマンドがアクセスできるファイルを制限して実行します。レイヤー化したポリシーから、bubblewrap のマウント名前空間を組み立てます。"
     },
     {
       "repo": "kemi",
