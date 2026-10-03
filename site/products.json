@@ -18,6 +18,7 @@
     },
     {
       "repo": "kemi",
+      "site": "https://ba0918.github.io/kemi/",
       "en": "A local browser-based review tool that returns human feedback as structured JSON.",
       "ja": "人のレビュー結果を構造化 JSON で返す、ブラウザで使うローカルレビューツールです。"
     },
