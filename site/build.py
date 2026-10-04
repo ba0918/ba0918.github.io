@@ -153,7 +153,7 @@ def main():
         shutil.rmtree(out)
     out.mkdir(parents=True)
     (out / "index.html").write_text(page, encoding="utf-8")
-    for asset in ("style.css", "favicon.png", "apple-touch-icon.png", "avatar.jpg", "build-loop.svg"):
+    for asset in ("language-preference.js", "style.css", "favicon.png", "apple-touch-icon.png", "avatar.jpg", "build-loop.svg"):
         shutil.copy(ROOT / asset, out / asset)
     (out / ".nojekyll").write_text("")
     print(f"built {out / 'index.html'}: {len(config['featured'])} featured, {len(others)} other repositories")

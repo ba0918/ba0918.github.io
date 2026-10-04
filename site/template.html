@@ -12,13 +12,10 @@
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
+<script src="language-preference.js"></script>
 <script>
   (function () {
-    var lang = null;
-    try { lang = localStorage.getItem("portfolio-lang"); } catch (e) {}
-    if (lang !== "en" && lang !== "ja") {
-      lang = /^ja\b/i.test(navigator.language || "") ? "ja" : "en";
-    }
+    var lang = siteLanguage.read('portfolio-lang');
     document.documentElement.dataset.lang = lang;
     document.documentElement.lang = lang;
   })();
@@ -104,7 +101,7 @@
       var next = root.dataset.lang === "ja" ? "en" : "ja";
       root.dataset.lang = next;
       root.lang = next;
-      try { localStorage.setItem("portfolio-lang", next); } catch (e) {}
+      siteLanguage.save(next);
     });
   })();
 </script>

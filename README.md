@@ -13,3 +13,14 @@ Preview locally:
 ```sh
 python3 site/build.py --out _site && python3 -m http.server -d _site
 ```
+
+Run `python3 site/check.py --out _site` before previewing or publishing (Python 3.11+
+and Node.js 18+). Pages uses the same check for JavaScript, the language contract,
+local assets and fragment links. Use `--repos repos.json` with the builder to reuse a
+saved GitHub API response for offline or before/after comparisons.
+
+Language selection reads a valid `ba0918-language` (`en`/`ja`) first, then the legacy
+`portfolio-lang`, otherwise English. Browser language no longer determines the initial
+page language. Reading never writes or promotes a legacy value. Only an explicit
+switch saves the shared key; storage denial still allows in-page switching. Other
+ba0918 pages inherit the choice on navigation/reload, without live tab synchronization.
