@@ -8,6 +8,7 @@
     },
     {
       "repo": "kotowari",
+      "site": "https://ba0918.github.io/kotowari/",
       "en": "Check that every requirement connects to a design decision and a test. Uses structured Markdown specifications for LLM-driven development (Spec-as-IR).",
       "ja": "要件が設計判断やテストにつながっているかを検査します。構造化 Markdown の仕様を使い、LLM 駆動開発を支える Spec-as-IR ツールです。"
     },
