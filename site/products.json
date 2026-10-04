@@ -13,6 +13,7 @@
     },
     {
       "repo": "kakoi",
+      "site": "https://ba0918.github.io/kakoi/",
       "en": "Control which files a command can access when it runs. Builds a bubblewrap mount namespace from layered policies.",
       "ja": "コマンドがアクセスできるファイルを制限して実行します。レイヤー化したポリシーから、bubblewrap のマウント名前空間を組み立てます。"
     },
