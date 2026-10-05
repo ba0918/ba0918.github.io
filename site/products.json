@@ -1,39 +1,85 @@
 {
-  "featured": [
-    {
-      "repo": "command-guardian",
-      "site": "https://ba0918.github.io/command-guardian/",
-      "en": "Checks shell commands for destructive effects before they run, and answers allow, ask or block. Works from the CLI and as a pre-execution hook for Claude Code and Codex.",
-      "ja": "シェルコマンドを実行前に読み、何を壊すかを判定して allow・ask・block を返します。CLI としても、Claude Code や Codex の実行前フックとしても使えます。"
-    },
-    {
-      "repo": "kotowari",
-      "site": "https://ba0918.github.io/kotowari/",
-      "en": "Check that every requirement connects to a design decision and a test. Uses structured Markdown specifications for LLM-driven development (Spec-as-IR).",
-      "ja": "要件が設計判断やテストにつながっているかを検査します。構造化 Markdown の仕様を使い、LLM 駆動開発を支える Spec-as-IR ツールです。"
-    },
-    {
-      "repo": "kakoi",
-      "site": "https://ba0918.github.io/kakoi/",
-      "en": "Control which files a command can access when it runs. Builds a bubblewrap mount namespace from layered policies.",
-      "ja": "コマンドがアクセスできるファイルを制限して実行します。レイヤー化したポリシーから、bubblewrap のマウント名前空間を組み立てます。"
-    },
-    {
-      "repo": "kemi",
-      "site": "https://ba0918.github.io/kemi/",
-      "en": "A local browser-based review tool that returns human feedback as structured JSON.",
-      "ja": "人のレビュー結果を構造化 JSON で返す、ブラウザで使うローカルレビューツールです。"
-    },
-    {
-      "repo": "remote-merge",
-      "en": "A TUI that shows and merges file differences between your machine and a remote server over SSH.",
-      "ja": "SSH 経由でローカルとリモートサーバのファイル差分を TUI で表示・マージする CLI ツールです。"
-    },
-    {
-      "repo": "ccusage-ledger",
-      "en": "A usage dashboard for agent CLIs that visualizes cost, tokens and cache hit rates from ccusage data.",
-      "ja": "ccusage のデータから、エージェント CLI のコスト・トークン数・キャッシュヒット率を可視化するダッシュボードです。"
-    }
+  "exclude": [
+    "ba0918.github.io",
+    "ba-mouse-gesture"
   ],
-  "exclude": ["ba0918.github.io"]
+  "categories": [
+    {
+      "id": "developer-tools",
+      "en": "Developer tools",
+      "ja": "開発者向けツール",
+      "items": [
+        {
+          "repo": "command-guardian",
+          "site": "https://ba0918.github.io/command-guardian/",
+          "en": "Checks shell commands for destructive effects before they run, and answers allow, ask or block. Works from the CLI and as a pre-execution hook for Claude Code and Codex.",
+          "ja": "シェルコマンドを実行前に読み、何を壊すかを判定して allow・ask・block を返します。CLI としても、Claude Code や Codex の実行前フックとしても使えます。"
+        },
+        {
+          "repo": "kakoi",
+          "site": "https://ba0918.github.io/kakoi/",
+          "en": "Control which files a command can access when it runs. Builds a bubblewrap mount namespace from layered policies.",
+          "ja": "コマンドがアクセスできるファイルを制限して実行します。レイヤー化したポリシーから、bubblewrap のマウント名前空間を組み立てます。"
+        },
+        {
+          "repo": "kotowari",
+          "site": "https://ba0918.github.io/kotowari/",
+          "en": "Check that every requirement connects to a design decision and a test. Uses structured Markdown specifications for LLM-driven development (Spec-as-IR).",
+          "ja": "要件が設計判断やテストにつながっているかを検査します。構造化 Markdown の仕様を使い、LLM 駆動開発を支える Spec-as-IR ツールです。"
+        },
+        {
+          "repo": "kemi",
+          "site": "https://ba0918.github.io/kemi/",
+          "en": "A local browser-based review tool that returns human feedback as structured JSON.",
+          "ja": "人のレビュー結果を構造化 JSON で返す、ブラウザで使うローカルレビューツールです。"
+        },
+        {
+          "repo": "remote-merge",
+          "en": "A TUI that shows and merges file differences between your machine and a remote server over SSH.",
+          "ja": "SSH 経由でローカルとリモートサーバのファイル差分を TUI で表示・マージする CLI ツールです。"
+        },
+        {
+          "repo": "ccusage-ledger",
+          "en": "A usage dashboard for agent CLIs that visualizes cost, tokens and cache hit rates from ccusage data.",
+          "ja": "ccusage のデータから、エージェント CLI のコスト・トークン数・キャッシュヒット率を可視化するダッシュボードです。"
+        }
+      ]
+    },
+    {
+      "id": "browser-extensions",
+      "en": "Browser extensions",
+      "ja": "ブラウザ拡張",
+      "items": [
+        {
+          "repo": "markdown-viewer",
+          "title": "Markdown Viewer - Simple & Secure",
+          "store": "https://chromewebstore.google.com/detail/markdown-viewer-simple-se/meacjeaboaldhcicilhghkcgmpljbeog",
+          "en": "View local Markdown files in Chrome with GitHub-flavored Markdown, syntax highlighting and automatic reload.",
+          "ja": "ローカルの Markdown ファイルを Chrome で表示。GitHub 形式の Markdown、シンタックスハイライト、自動再読み込みに対応しています。"
+        }
+      ]
+    },
+    {
+      "id": "agent-skills",
+      "en": "Agent skills & rules",
+      "ja": "AIエージェント向けスキル・ルール",
+      "items": [
+        {
+          "repo": "agentic-workflow",
+          "en": "Workflow skills that guide AI coding agents through investigation, planning, implementation and review.",
+          "ja": "調査、計画、実装、レビューまで、AI コーディングエージェントの開発手順を導くスキル集です。"
+        },
+        {
+          "repo": "agentic-rules",
+          "en": "Shared conventions for AI coding agents: design, testing, commits, information placement and secret handling.",
+          "ja": "設計、テスト、コミット、情報の配置、機密情報の扱いなど、AI コーディングエージェントの共通ルール集です。"
+        },
+        {
+          "repo": "agentic-meta",
+          "en": "Skills for measuring, evaluating and improving other skills, including regression checks and context audits.",
+          "ja": "ほかのスキルを測定・評価・改善するためのスキル集。回帰チェックやコンテキスト監査を支援します。"
+        }
+      ]
+    }
+  ]
 }

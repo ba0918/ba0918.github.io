@@ -78,7 +78,7 @@ nav a:hover { color: var(--fg); text-decoration: none; }
 h1 { font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.2; margin: 0 0 20px; letter-spacing: -0.02em; max-width: 22ch; }
 html[data-lang="ja"] h1 { max-width: 18em; letter-spacing: 0; }
 h1 em { font-style: normal; color: var(--accent); }
-h1, h2, h3 { text-wrap: balance; }
+h1, h2, h3, h4 { text-wrap: balance; }
 html[lang="ja"] h1, html[lang="ja"] h2, html[lang="ja"] h3 { word-break: auto-phrase; }
 .tagline { font-size: 1.1rem; color: var(--muted); max-width: 46em; margin: 0; }
 
@@ -99,16 +99,16 @@ section[hidden] { display: none; }
 .section-lead { color: var(--muted); max-width: 52em; margin: 0 0 28px; }
 
 /* product cards */
-.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .card {
   display: flex; flex-direction: column; gap: 8px;
   border: 1px solid var(--border); border-radius: 12px; padding: 20px; background: var(--bg);
 }
 .card { transition: border-color 160ms ease, box-shadow 160ms ease; }
 .card:hover, .card:focus-within { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); box-shadow: 0 4px 16px color-mix(in srgb, var(--fg) 6%, transparent); }
-.card h3, .repo-head { overflow-wrap: anywhere; }
-.card h3 { margin: 0; font-size: 1.2rem; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
-.card h3 a { color: var(--fg); }
+.card h4, .repo-head { overflow-wrap: anywhere; }
+.card h4 { margin: 0; font-size: 1.2rem; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+.card h4 a { color: var(--fg); }
 .card p { margin: 0; color: var(--muted); }
 .card .meta { margin-top: auto; padding-top: 4px; }
 .card-links { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -161,3 +161,9 @@ section[hidden] { display: none; }
 @media (max-width:560px) {
   .build-loop { grid-column:1; grid-row:3; width:100%; max-width:320px; margin-top:4px; }
 }
+
+/* Broad categories retain the existing card and section vocabulary. */
+.product-category { padding: 0; }
+.product-category + .product-category { margin-top: 48px; }
+.category-title { margin: 0 0 20px; padding-left: 12px; border-left: 3px solid var(--accent); font-size: 1.2rem; line-height: 1.45; }
+@media (max-width: 560px) { .product-category + .product-category { margin-top: 36px; } }

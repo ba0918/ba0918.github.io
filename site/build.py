@@ -74,12 +74,12 @@ def updated(repo):
     )
 
 
-def links(repo_url, site):
+def links(repo_url, site, labels=("Website", "サイトを見る")):
     out = []
     if site:
         out.append(
             f'<a class="button primary" href="{esc(site)}">'
-            '<span class="en">Website</span><span class="ja">サイトを見る</span></a>'
+            f'<span class="en">{esc(labels[0])}</span><span class="ja">{esc(labels[1])}</span></a>'
         )
     out.append(f'<a class="button" href="{esc(repo_url)}">GitHub</a>')
     return "".join(out)
@@ -88,15 +88,25 @@ def links(repo_url, site):
 def featured_card(item, repo):
     name = item["repo"]
     repo_url = repo.get("html_url") or f"https://github.com/{USER}/{name}"
-    site = item.get("site") or site_url(repo)
+    site = item.get("store") or item.get("site") or site_url(repo)
+    labels = ("Chrome Web Store", "Chrome ウェブストア") if item.get("store") else ("Website", "サイトを見る")
+    card_links = links(repo_url, site, labels)
     meta = " ".join(x for x in (lang_badge(repo), updated(repo)) if x)
     return f"""<article class="card">
-  <h3><a href="{esc(site or repo_url)}">{esc(name)}</a></h3>
+  <h4><a href="{esc(site or repo_url)}">{esc(item.get("title", name))}</a></h4>
   <p class="en">{esc(item["en"])}</p>
   <p class="ja">{esc(item["ja"])}</p>
   <p class="meta">{meta}</p>
-  <div class="card-links">{links(repo_url, site)}</div>
+  <div class="card-links">{card_links}</div>
 </article>"""
+
+
+def category_section(category, by_name):
+    cards = "\n".join(featured_card(item, by_name.get(item["repo"], {})) for item in category["items"])
+    return f'''<section class="product-category" aria-labelledby="{esc(category['id'])}">
+  <h3 class="category-title" id="{esc(category['id'])}"><span class="en">{esc(category['en'])}</span><span class="ja">{esc(category['ja'])}</span></h3>
+  <div class="cards">{cards}</div>
+</section>'''
 
 
 def repo_row(repo):
@@ -133,10 +143,11 @@ def main():
 
     public = [r for r in repos if not r.get("private")]
     by_name = {r["name"]: r for r in public}
-    featured_names = {item["repo"] for item in config["featured"]}
+    featured_items = [item for category in config["categories"] for item in category["items"]]
+    featured_names = {item["repo"] for item in featured_items}
     skip = featured_names | set(config.get("exclude", []))
 
-    featured = "\n".join(featured_card(item, by_name.get(item["repo"], {})) for item in config["featured"])
+    featured = "\n".join(category_section(category, by_name) for category in config["categories"])
     others = [r for r in public if not r.get("fork") and not r.get("archived") and r["name"] not in skip]
     others.sort(key=lambda r: r.get("pushed_at") or "", reverse=True)
     others = others[:6]
@@ -156,7 +167,7 @@ def main():
     for asset in ("language-preference.js", "style.css", "favicon.png", "apple-touch-icon.png", "avatar.jpg", "build-loop.svg"):
         shutil.copy(ROOT / asset, out / asset)
     (out / ".nojekyll").write_text("")
-    print(f"built {out / 'index.html'}: {len(config['featured'])} featured, {len(others)} other repositories")
+    print(f"built {out / 'index.html'}: {len(featured_items)} featured, {len(others)} other repositories")
 
 
 if __name__ == "__main__":
