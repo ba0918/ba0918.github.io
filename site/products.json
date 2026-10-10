@@ -34,14 +34,11 @@
           "ja": "人のレビュー結果を構造化 JSON で返す、ブラウザで使うローカルレビューツールです。"
         },
         {
-          "repo": "remote-merge",
-          "en": "A TUI that shows and merges file differences between your machine and a remote server over SSH.",
-          "ja": "SSH 経由でローカルとリモートサーバのファイル差分を TUI で表示・マージする CLI ツールです。"
-        },
-        {
-          "repo": "ccusage-ledger",
-          "en": "A usage dashboard for agent CLIs that visualizes cost, tokens and cache hit rates from ccusage data.",
-          "ja": "ccusage のデータから、エージェント CLI のコスト・トークン数・キャッシュヒット率を可視化するダッシュボードです。"
+          "repo": "shoryo",
+          "title": "Shoryo",
+          "site": "https://ba0918.github.io/shoryo/",
+          "en": "A local browser tool for LLM-led requirements interviews. Review questions, send answers in rounds and check decisions before the workflow writes a specification.",
+          "ja": "LLM による要件ヒアリングをローカルブラウザで進めるツールです。質問を確認し、回答をラウンドごとに送り、ワークフローが仕様を書く前に決定事項を確認できます。"
         }
       ]
     },
